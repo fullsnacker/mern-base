@@ -28,7 +28,7 @@ export default class CreateUser extends Component {
 
     console.log(user);
 
-    axios.post('http://localhost:process.env.PORT/users/add', user)
+    axios.post(process.env.HEROKU_URI + ':' + process.env.PORT + '/users/add', user)
       .then(res => console.log(res.data));
 
     this.setState({
