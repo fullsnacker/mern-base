@@ -34,7 +34,7 @@ export default class ExercisesList extends Component {
   }
 
   deleteExercise(id) {
-    axios.delete(process.env.HEROKU_URI + ':' + process.env.PORT + '/exercises/'+id)
+    axios.delete(window.location.host + '/exercises/'+id)
       .then(response => { console.log(response.data)});
 
     this.setState({

@@ -23,7 +23,7 @@ export default class CreateExercise extends Component {
   }
 
   componentDidMount() {
-    axios.get(process.env.HEROKU_URI + ':' + process.env.PORT + '/users/')
+    axios.get(window.location.host + '/users/')
       .then(response => {
         if (response.data.length > 0) {
           this.setState({
@@ -74,7 +74,7 @@ export default class CreateExercise extends Component {
 
     console.log(exercise);
 
-    axios.post(process.env.HEROKU_URI + ':' + process.env.PORT + '/exercises/add', exercise)
+    axios.post(window.location.host + '/exercises/add', exercise)
       .then(res => console.log(res.data));
 
     window.location = '/';
