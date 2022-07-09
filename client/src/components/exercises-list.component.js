@@ -24,7 +24,7 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    axios.get(process.env.HEROKU_URI + ':' + process.env.PORT + '/exercises/')
+    axios.get(window.location.host + '/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
       })
