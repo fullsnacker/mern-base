@@ -24,7 +24,6 @@ export default class ExercisesList extends Component {
   }
 
   componentDidMount() {
-    console.log(process.env);
     axios.get(process.env.REACT_APP_API_URL + '/exercises/')
       .then(response => {
         this.setState({ exercises: response.data })
